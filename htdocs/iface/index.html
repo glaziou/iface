@@ -1,0 +1,223 @@
+<HTML><HEAD><TITLE>Sampsize</TITLE></HEAD>
+  
+  <BODY>
+    <FONT face="Verdana">	
+      <H2>Sampsize</H2>
+      Sample size for: <A name="index">&nbsp</A>
+      <UL>
+	<LI><A href="#prev">Prevalence survey</A></LI>
+	<LI><A href="#min">Low probability events</A></LI>
+	<LI><A href="s1.html#comp">Comparative study of percentages</A></LI>
+	<LI><A href="s1.html#np">Power determination: percentages</A></LI>
+	<LI><A href="s2.html#means">Comparative study of means</A></LI>
+	<LI><A href="s2.html#nm">Power determination: means</A></LI>
+	<LI><A href="s3.html#cc">Case-control study</A></LI>
+	<LI><A href="s3.html#ccp">Power of a case-control study</A></LI>
+      </UL>
+      
+      <HR>
+      <A name="prev">&nbsp</A>
+      <TABLE width=90%>
+	<TR>
+	  <TD><B>
+	  Sample size for a prevalence survey, with finite population correction</B></TD>
+	</TR>
+      </TABLE>
+      <BR>
+      <FORM action="../../cgi-bin/si.cgi" method="POST">
+	<TABLE cellspacing=2 cellpadding=0 bgcolor="#EFF3F7">
+	  <TR>
+	    <TD align=right> &nbsp&nbsp</TD>      
+	    <TD></TD>
+	    <TD width=30></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Precision &nbsp&nbsp</TD>      
+	    <TD><INPUT type="text" size=15 maxlength=10 name="s"></TD>
+	    <TD width=30>%</TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Prevalence &nbsp&nbsp </TD> 
+	    <TD><INPUT type="text" size=15 maxlength=10 name="pr" value="50"></TD>
+	    <TD>% </TD>
+	    <TD align=left>Enter 50 if unknown</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Population &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="pop" value="0"></TD>
+	    <TD>&nbsp</TD>
+	    <TD>Enter 0 if unknown</TD>
+	    </TR><TR>
+	    <TD align=right>Level &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="level" value="95"></TD>
+	    <TD>%</TD>
+	    <TD>Level of the confidence interval</TD>
+	  </TR>
+	  <TR>
+	    <TD colspan=3>&nbsp</TD>
+	  </TR>
+	</TABLE>
+	
+	<INPUT type="submit" value="Calculate">
+	<INPUT type="reset" value="Clear">
+      </FORM>
+      <BR>
+      <TABLE width="600">
+	<TR>
+	  <TD align=left>
+	    If you enter a precision of 5%, <EM>Sampsize</EM> will return the
+	    sample size needed for 95% (default) or any other confidence interval where
+	    the upper limit equals <B>prevalence + precision</B> and the lower limit
+	    equals <B>prevalence - precision</B>.<BR><P>
+	    
+	    The population size is the total size of the population from which
+	    a sample will be drawn for the survey. If the population size is
+	    small, the correction for finite population will result in a reduced
+	    sample size.<BR><P>
+	    
+	    Entering 50 for the estimated prevalence will result in
+	    the highest sample size. Entering 0 for the population
+	    size will result in <EM>Sampsize </EM> using an infinite
+	    (very large) population size.  <BR>If the population is
+	    infinite, sampsize will also return the exact binomial
+	    confidence limits given the returned sample size and
+	    entered prevalence. These limits should be close to the
+	    specified limits. If the exact bounds are wider than the
+	    specified ones, then the formula for estimating the sample
+	    size is likely inappropriate, and an alternative course of
+	    action is to test different combinations of sample size
+	    and number of observed events (such as the number of
+	    patients with the studied disease) and calculating an 
+	    <A href="#min">exact confidence interval</A> given the
+	    combination.
+	    
+	  </TD>
+	</TR>
+      </TABLE>
+      <BR><BR>
+      <A name="min">&nbsp</A>
+      <TABLE width=90%>
+	<TR>
+	  <TD><B>Binomial Exact Confidence Interval</B></TD>
+	</TR>
+      </TABLE>
+      <BR>
+      <FORM action="../../cgi-bin/si.cgi" method="POST">
+	<TABLE cellspacing=2 cellpadding=0 bgcolor="#EFF3F7" width="550">
+	  <TR>
+	    <TD align=right> &nbsp&nbsp</TD>      
+	    <TD></TD>
+	    <TD width=30></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right width = "400">N total &nbsp&nbsp </TD> 
+	    <TD><INPUT type="text" size=15 maxlength=10 name="bi1"></TD>
+	    <TD align=left width="150"></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Number of successful events &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="bi2"></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Level of Confidence Interval &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="level" value="95"></TD>
+	  </TR>
+	  <TR>
+	    <TD colspan=3>&nbsp</TD>
+	  </TR>
+	</TABLE>
+	
+	<INPUT type="submit" value="Calculate">
+	<INPUT type="reset" value="Clear">
+      </FORM>
+      <P>
+      <BR>
+      <TABLE width="600">
+	<TR>
+	  <TD align=left>
+	    <B>Example:</B> You flip a coin 10 times and it comes up heads only
+	    once. You are shocked and decide to obtain a 99% confidence
+	    interval for this coin. You enter 10 in the field "N total", 
+	    1 in the field "Number of successful events", and 99 in the 
+	    field "Level of Confidence Interval", which is expressed as 
+	    a percentage. Sampsize will return a 99% confidence interval
+	    from 0.05% to 54%, which tells you that observing only one head
+	    may be due to a random sampling effect given a 50% probability
+	    of heads to show up.
+	  </TD>
+	</TR>
+      </TABLE>
+      <HR>
+      <A name="min">&nbsp</A>
+      <TABLE width=90%>
+	<TR>
+	  <TD><B>Sample size needed to observe at least <I>n</I> events given 
+	  probability of occurrence equals prevalence</B></TD>
+	</TR>
+      </TABLE>
+      <BR>
+      <FORM action="../../cgi-bin/si.cgi" method="POST">
+	<TABLE cellspacing=2 cellpadding=0 bgcolor="#EFF3F7" width="550">
+	  <TR>
+	    <TD align=right> &nbsp&nbsp</TD>      
+	    <TD></TD>
+	    <TD width=30></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right width = "400">Prevalence &nbsp&nbsp </TD> 
+	    <TD><INPUT type="text" size=15 maxlength=10 name="pr" value="50"></TD>
+	    <TD align=left width="150">% Enter 50 if unknown</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Minimum number of events &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="nob"></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Probability to observe the above number &nbsp&nbsp<BR>
+	    of events in the sample &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="level" value="95"></TD>
+	    <TD>% (default 95%)</TD>
+	  </TR>
+	  <TR>
+	    <TD colspan=3>&nbsp</TD>
+	  </TR>
+	</TABLE>
+	
+	<INPUT type="submit" value="Calculate">
+	<INPUT type="reset" value="Clear">
+      </FORM>
+      <BR><BR>
+      
+      <TABLE width="600">
+	<TR><TD><B>Example:</B> A study on the hepatitis C virus aims at
+	    describing some characteristics of the virus strains. It
+	    is assumed that the prevalence of virus positive individuals is
+	    10% in the population. The investigators wish to calculate the
+	    sample size needed to be 95% sure that at least 5 patients will
+	    harbour a virus. The values 10 in the "Prevalence" field
+	    (prevalence is expressed as a percentage), and 5 in the "Minimum
+	    number of events" field should be entered. The default value may
+	    be left in the last field "Probability to observe the above
+	    numer". Sampsize returns an estimated sample size of n = 90.
+      </TD></TR> </TABLE>
+      
+      
+      
+      <A href="#index">Goto index</A>
+    </FONT>
+    <HR>
+    &copy 2003-2005 Philippe Glaziou <BR>
+    <CODE>glaziou@gmail.com</CODE><BR>
+    <I>Sampsize</I> project <A href="http://sampsize.sourceforge.net">Homepage.</A>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1599321-3";
+urchinTracker();
+</script>
+  </BODY>
+</HTML>

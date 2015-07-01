@@ -1,0 +1,189 @@
+<HTML><HEAD><TITLE>Sampsize</TITLE></HEAD>
+  
+  <BODY>
+    <FONT face="Verdana">	
+      <H2>Sampsize</H2>
+      Sample size for: <A name="index">&nbsp</A>
+      <UL>
+	<LI><A href="index.html#prev">Prevalence survey</A></LI>
+	<LI><A href="index.html#min">Low probability events</A></LI>
+	<LI><A href="s1.html#comp">Comparative study of percentages</A></LI>
+	<LI><A href="s1.html#np">Power determination: percentages</A></LI>
+	<LI><A href="s2.html#means">Comparative study of means</A></LI>
+	<LI><A href="s2.html#nm">Power determination: means</A></LI>
+	<LI><A href="#cc">Case-control study</A></LI>
+	<LI><A href="#ccp">Power of a case-control study</A></LI>
+      </UL>
+      
+      <HR>
+      <A name="cc">&nbsp</A>
+      <TABLE width=90%>
+	<TR>
+	  <TD><B>Sample size for a case-control study</B></TD>
+	</TR>
+      </TABLE>
+      <BR>
+      <FORM action="../../cgi-bin/s3.cgi" method="POST">
+	<TABLE cellspacing=2 cellpadding=0 bgcolor="#EFF3F7" width="500">
+	  <TR>
+	    <TD align=right> &nbsp&nbsp</TD>      
+	    <TD></TD>
+	    <TD width=30></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Minimum Odds Ratio to detect&nbsp&nbsp </TD> 
+	    <TD><INPUT type="text" size=15 maxlength=10 name="or"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Percentage exposed among controls &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="exp"></TD>
+	    <TD>%</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Power &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="power" value="90"></TD>
+	    <TD>% (default 90%)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Number of controls per case &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="c" value="1"></TD>
+	    <TD>&nbsp&nbsp&nbsp(default 1)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Alpha risk &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="alpha" value="5"></TD>
+	    <TD>% (default 5%)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>One-sided test &nbsp&nbsp </TD>
+	    <TD><INPUT type="checkbox" name="onesided"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>1:1 matched study design&nbsp&nbsp </TD>
+	    <TD><INPUT type="checkbox" name="matched"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD colspan=3>&nbsp</TD>
+	  </TR>
+	</TABLE>
+	
+	<INPUT type="submit" value="Calculate">
+	<INPUT type="reset" value="Clear">
+      </FORM>
+      <BR><BR>
+      
+      <TABLE width="600"><TR><TD><B>Example:</B> We wish to conduct a
+	    case-control study to assess whether bladder cancer may be
+	    associated with past exposure to cigarette smoking. Cases will
+	    be patients with bladder cancer and controls will be patients
+	    hospitalized for injury. It is assumed that 20% of controls will
+	    be smokers or past smokers, and we wish to detect an odds-ratio
+	    of 2 with power 90%. Three controls will be recruited for one
+	    case. 
+	    <BR>
+	    We enter the values 2 in the field "Minimum Odds-ratio to
+	    detect", 20 in the field "Percentage exposed among controls", 3
+	    in the field "Number of controls per case" and leave "Alpha risk" and
+	    "Power" at their default values. The check box "One-sided test"
+	    is left unchecked. Sampsize returns an estimate sample size of
+	    600: 150 cases and 450 controls.<br><br>
+	    An alternative is to conduct a matched case-control study rather 
+	    than the above unmatched design. One case will be matched to one 
+	    control. With all other parameters equal to above specified, 
+	    sampsize returns a sample size of 226 case-control pairs (total 
+	    sample size 452).
+      </TD></TR></TABLE>
+      <HR>
+      <A name="ccp">&nbsp</A>
+      <TABLE width=90%>
+	<TR>
+	  <TD><B>Power of a case-control study</B></TD>
+	</TR>
+      </TABLE>
+      <BR>
+      <FORM action="../../cgi-bin/s3.cgi" method="POST">
+	<TABLE cellspacing=2 cellpadding=0 bgcolor="#EFF3F7" width="500">
+	  <TR>
+	    <TD align=right> &nbsp&nbsp</TD>      
+	    <TD></TD>
+	    <TD width=30></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Odds Ratio&nbsp&nbsp <INPUT type="text" size=10 maxlength=10 name="or"></TD>
+	    <TD align=center>&nbsp or: &nbsp<INPUT type="checkbox" name="minimum"</TD> 
+	      <TD>click to compute minimum detectable OR</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Percentage exposed among controls &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="exp"></TD>
+	    <TD>%</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Number of cases &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="n"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Number of controls per case &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="c" value="1"></TD>
+	    <TD>&nbsp&nbsp&nbsp(default 1)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Alpha risk &nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="alpha" value="5"></TD>
+	    <TD>% (default 5%)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>One-sided test &nbsp&nbsp </TD>
+	    <TD><INPUT type="checkbox" name="onesided"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>1:1 matched study design&nbsp&nbsp </TD>
+	    <TD><INPUT type="checkbox" name="matched"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD colspan=3>&nbsp</TD>
+	  </TR>
+	</TABLE>
+	
+	<INPUT type="submit" value="Calculate">
+	<INPUT type="reset" value="Clear">
+      </FORM>
+      <BR><BR>
+      
+      <TABLE width="600"><TR><TD>
+	<B>Example:</B> Kessler and Clark (1978) studied 365 males with
+	bladder cancer and an equal number of controls, 35% of whom reported
+	past use of nonnutritive sweeteners. Using a one-sided test at the 
+	alpha = 5% level, the smallest risk greater than one that can
+	be detected with 90% power is RR = 1.55:<br>
+	Click the check box to compute minimum OR, enter 35 in the field 
+	"percentage exposed among controls", 365 in the field "number of 
+	cases", and select a one-sided test.<br>
+	<b>Note:</b> the minimum/maximum detectable OR is only computed for an 
+	equal number of cases and controls.
+			      
+      </TD></TR></TABLE>
+      
+      
+      <A href="#index">Goto index</A>
+    </FONT>
+    <HR>
+    &copy 2003-2005 Philippe Glaziou<BR>
+    <CODE>glaziou@gmail.com</CODE><BR>
+    <I>Sampsize</I> project <A href="http://sampsize.sourceforge.net">Homepage.</A>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1599321-3";
+urchinTracker();
+</script>
+  </BODY>
+</HTML>

@@ -1,0 +1,1718 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>&nbsp;
+Sampsize &nbsp;
+Sample size and Power &nbsp;
+Version 0.6 &nbsp;
+September 29, 2003 </TITLE>
+<META NAME="description" CONTENT="&nbsp;
+Sampsize &nbsp;
+Sample size and Power &nbsp;
+Version 0.6 &nbsp;
+September 29, 2003 ">
+<META NAME="keywords" CONTENT="manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="manual.css">
+
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="/usr/share/latex2html/icons/nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png">   
+<BR>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<H1 ALIGN="CENTER">
+<BR>
+<BR> 
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>&nbsp;</TD>
+<TD ALIGN="RIGHT"><FONT SIZE="+4"><B>Sampsize</B></FONT></TD>
+</TR>
+</TABLE>
+<BR>
+<BR> 
+ 
+<BR> 
+<BR><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>&nbsp;</TD>
+<TD ALIGN="RIGHT"><FONT SIZE="+1"><B>Sample size and Power</B></FONT></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>&nbsp;</TD>
+<TD ALIGN="RIGHT"><FONT SIZE="+1"><B>Version 0.6</B></FONT></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>&nbsp;</TD>
+<TD ALIGN="RIGHT"><FONT SIZE="+1">September 29, 2003</FONT></TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</H1>
+<P ALIGN="CENTER"><STRONG><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=388>Philippe G<SMALL>LAZIOU</SMALL></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=388><TT><A NAME="tex2html1"
+  HREF="glaziou@gmail.com">glaziou@gmail.com</A></TT></TD>
+</TR>
+</TABLE>
+<BR></STRONG></P>
+Copyright (c) 2003 Philippe Glaziou. All rights reserved.
+
+<P>
+Permission is granted to make and distribute verbatim copies of
+this manual provided the copyright notice and this permission notice
+are preserved on all copies.
+
+<P>
+This document is free; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your
+option) any later version. 
+
+<P>
+This document is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied war ranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+<P>
+See the GNU General Public License for more details. You
+should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation,
+Inc., 59 Te mple Place, Suite 330, Boston, MA 02111-1307, USA.
+
+<P>
+
+<BR>
+
+<H2><A NAME="SECTION00010000000000000000">
+Contents</A>
+</H2>
+<!--Table of Contents-->
+
+<UL>
+<LI><A NAME="tex2html22"
+  HREF="manual.html">SAMPSIZE</A>
+<UL>
+<LI><A NAME="tex2html23"
+  HREF="#SECTION00021000000000000000">NAME</A>
+<LI><A NAME="tex2html24"
+  HREF="#SECTION00022000000000000000">SYNOPSIS</A>
+<LI><A NAME="tex2html25"
+  HREF="#SECTION00023000000000000000">OPTIONS</A>
+<LI><A NAME="tex2html26"
+  HREF="#SECTION00024000000000000000">DESCRIPTION</A>
+<LI><A NAME="tex2html27"
+  HREF="#SECTION00025000000000000000">USAGE</A>
+<LI><A NAME="tex2html28"
+  HREF="#SECTION00026000000000000000">EXAMPLES</A>
+<LI><A NAME="tex2html29"
+  HREF="#SECTION00027000000000000000">Prevalence surveys</A>
+<LI><A NAME="tex2html30"
+  HREF="#SECTION00028000000000000000">Comparative studies of proportions</A>
+<LI><A NAME="tex2html31"
+  HREF="#SECTION00029000000000000000">Comparative studies of means</A>
+<LI><A NAME="tex2html32"
+  HREF="#SECTION000210000000000000000">Case-Control Studies</A>
+<LI><A NAME="tex2html33"
+  HREF="#SECTION000211000000000000000">Equivalence trials</A>
+<LI><A NAME="tex2html34"
+  HREF="#SECTION000212000000000000000">PRIMARY FTP SITE</A>
+<LI><A NAME="tex2html35"
+  HREF="#SECTION000213000000000000000">NOTES</A>
+<LI><A NAME="tex2html36"
+  HREF="#SECTION000214000000000000000">REFERENCES</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html37"
+  HREF="#SECTION00030000000000000000">About this document ...</A>
+</UL>
+<!--End of Table of Contents-->
+
+<H1><A NAME="SECTION00020000000000000000">
+SAMPSIZE</A>
+</H1>
+Section: GNU Sampsize (1)
+<BR>
+Updated: 2003-05-08
+<BR>
+<P>
+
+<H2><A NAME="SECTION00021000000000000000">
+NAME</A>
+</H2>
+
+<P>
+sampsize - Computes sample size and power
+
+<H2><A NAME="SECTION00022000000000000000">
+SYNOPSIS</A>
+</H2>
+
+<P>
+<B>sampsize</B>
+
+<P>
+[-h]
+[-v]
+[-onesided]
+[-onesample]
+[-matched]
+[-cc continuity]
+[-pop pop]
+[-e precision]
+[-pr prevalence]
+[-level level]
+[-alpha alpha]
+[-power power]
+[-c ratio]
+[-or odds_ratio]
+[-exp exposed]
+[-cp comp]
+[-means means]
+[-rho rho]
+[-d delta]
+[-nob observed]
+[-bi binomial]
+[-n sample]
+[-obsclus obsclus]
+[-numclus numclus]
+
+<P>
+&nbsp;
+
+<H2><A NAME="SECTION00023000000000000000">
+OPTIONS</A>
+</H2>
+
+<P>
+<DL>
+<DT><STRONG>-h</STRONG></DT>
+<DD>show usage information
+</DD>
+<DT><STRONG>-v</STRONG></DT>
+<DD>show program version
+</DD>
+<DT><STRONG>-onesided</STRONG></DT>
+<DD>one-sided test for comparisons
+</DD>
+<DT><STRONG>-onesample</STRONG></DT>
+<DD>one-sample test
+</DD>
+<DT><STRONG>-matched</STRONG></DT>
+<DD>1:1 matched case-control study
+</DD>
+<DT><STRONG>-cc</STRONG></DT>
+<DD>continuity
+</DD>
+<DT><STRONG>-pop</STRONG></DT>
+<DD>target population size,
+
+<P>
+1 value between 0.0 and oo.
+
+<P>
+Default: <code>`</code>0<code>'</code>
+</DD>
+<DT><STRONG>-e</STRONG></DT>
+<DD>precision of estimate (%) -<IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ $">- prevalence study option,
+
+<P>
+1 value between 0.0 and 100.
+</DD>
+<DT><STRONG>-pr</STRONG></DT>
+<DD>prevalence (%) -<IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ $">- prevalence study option,
+
+<P>
+1 value between 0.0 and 100.
+
+<P>
+Default: <code>`</code>50<code>'</code>
+</DD>
+<DT><STRONG>-level</STRONG></DT>
+<DD>level of confidence interval (%),
+
+<P>
+1 value between 50.0 and 100.
+
+<P>
+Default: <code>`</code>95<code>'</code>
+</DD>
+<DT><STRONG>-alpha</STRONG></DT>
+<DD>Risk alpha (%),
+
+<P>
+1 value between 0.0 and 100.
+
+<P>
+Default: <code>`</code>5<code>'</code>
+</DD>
+<DT><STRONG>-power</STRONG></DT>
+<DD>Power of the test (%),
+
+<P>
+1 value between 50.0 and 100.
+
+<P>
+Default: <code>`</code>90<code>'</code>
+</DD>
+<DT><STRONG>-c</STRONG></DT>
+<DD>number of controls per case,
+
+<P>
+1 integer value between 0 and oo with case control options, or
+
+<P>
+1 value between 0.0 and oo with other relevant options,
+
+<P>
+Default: <code>`</code>1<code>'</code>
+</DD>
+<DT><STRONG>-or</STRONG></DT>
+<DD>Odds Ratio -<IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ $">- case-control study option,
+
+<P>
+1 value between 0.0 and oo.
+</DD>
+<DT><STRONG>-exp</STRONG></DT>
+<DD>Exposed controls (%) -<IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ $">- case-control study option,
+
+<P>
+1 value between 0.0 and 100.
+</DD>
+<DT><STRONG>-cp</STRONG></DT>
+<DD>#p1 (%) #p2 (%) -<IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ $">- two sample comparison of percentages,
+
+<P>
+2 consecutive values between 0.0 and 100.
+</DD>
+<DT><STRONG>-means</STRONG></DT>
+<DD>#m1 #m2 #sd1 #sd2 -<IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ $">- two sample comparison of means,
+
+<P>
+3 values if onesample is selected or else, 4 consecutive values.
+</DD>
+<DT><STRONG>-rho</STRONG></DT>
+<DD>intraclass correlation coefficient -<IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ $">- cluster option
+
+<P>
+1 value between 0.0 and 1, default 0
+</DD>
+<DT><STRONG>-nob</STRONG></DT>
+<DD>minimum number of events observed in the sample,
+
+<P>
+1 integer value between 1 and 10000.
+</DD>
+<DT><STRONG>-bi</STRONG></DT>
+<DD>#obs #succ (binomial events, #obs &gt;= #succ),
+
+<P>
+2 integer values between 0 and oo.
+</DD>
+<DT><STRONG>-n</STRONG></DT>
+<DD>determine power from sample size,
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TT>n = size of first group (two-group comparative studies)
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TT>n = number of cases (unmatched case-control study)
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TT>n = number of pairs (1:1 matched case-control study)
+<BR>
+1 integer value between 1 and oo.
+</DD>
+<DT><STRONG>-obsclus</STRONG></DT>
+<DD>number of observations per cluster
+
+<P>
+1 integer value &gt; 0
+</DD>
+<DT><STRONG>-numclus</STRONG></DT>
+<DD>minimum number of clusters
+
+<P>
+1 integer value &gt; 0
+
+<P>
+</DD>
+<DT><STRONG>-d</STRONG></DT>
+<DD>delta critical value
+
+<P>
+1 value between 0.0 and oo
+
+<P>
+</DD>
+</DL>
+
+<P>
+
+<H2><A NAME="SECTION00024000000000000000">
+DESCRIPTION</A>
+</H2>
+
+<P>
+<I>S</I>ampsize computes sample size and power for prevalence studies, sample
+size and power for one-sample and two-sample comparative studies of percentages
+and means, and for unmatched and 1:1 matched case-control studies. 
+
+<P>
+
+<H2><A NAME="SECTION00025000000000000000">
+USAGE</A>
+</H2>
+
+<DL>
+<DT><STRONG><B>Prevalence Surveys</B></STRONG></DT>
+<DD>
+</DD>
+</DL>
+
+<P>
+The following options are relevant to simple prevalence studies:
+<DL>
+<DT><STRONG>-e</STRONG></DT>
+<DD>precision (%): we wish to obtain confidence limits equal to prevalence +/- precision
+</DD>
+<DT><STRONG>-pr</STRONG></DT>
+<DD>prevalence (%), default 50%
+</DD>
+<DT><STRONG>-pop</STRONG></DT>
+<DD>target population size, default 0 (infinite)
+</DD>
+<DT><STRONG>-level</STRONG></DT>
+<DD>of confidence interval, default 95%
+</DD>
+</DL>
+
+<P>
+The population size is the total size of the population from which a
+sample will be drawn for a prevalence survey. If the population size
+is small, the correction for finite population will result in a
+reduced sample size. A prevalence study will need either the <B>-e</B>
+option for precision, or the <B>-nob</B> option to specify a finite
+number of events (see below).
+
+<P>
+Entering 50 (50%) for the estimated prevalence (<B>-pr 50</B>), which
+is the default value, will result in the highest estimated sample
+size.  Entering 0 for the population size (<B>-pop 0</B>) will result
+in the programme using an infinite population size.  If a null
+prevalence is entered ( <B>-pr 0</B>), <I>s</I>ampsize returns the
+estimated sample size needed for a 95% (default) confidence interval
+upper limit that is equal to the entered precision (option <B>-e</B>).
+Any other confidence interval may be selected instead of the 95%
+confidence interval, using the option <B>-level</B>. <I>S</I>ampsize
+will display the binomial exact confidence interval using the returned
+sample size unless a finite population size is specified. It may
+happen that this exact interval is larger than the expected interval
+(prevalence plus or minus precision), when the number of successful
+events is lower than 5, or when sample size minus that number is lower
+than 5, due to the lack of precision of the normal approximation
+formula with small numbers. In thoses instances, it is advisable to
+test different hypotheses of sample size and hypothetical numbers of
+successful binomial events using the <B>-bi</B> option (see below).
+
+<P>
+
+<DL>
+<DT><STRONG><B>Minimum number of events to detect</B></STRONG></DT>
+<DD>
+</DD>
+</DL>
+
+<P>
+This is a variation over the previous design: prevalence is low and
+the capacity to deal with a large sample often necessary to achieve a
+reasonable precision of the measured estimate is limited. We will
+rather want to detect with probability specified with <B>-level</B> at
+least n sampled units with the studied characteristic, given a
+probability of occurence = prevalence (<B>-pr</B>).  The option <B>  -nob</B> instructs sampsize to return the sample size needed to observe
+at least <B>-nob</B> successful events, given a <B>-pr</B> probability
+of occurence. Relevant options are:
+<DL>
+<DT><STRONG>-nob</STRONG></DT>
+<DD>number to observe
+</DD>
+<DT><STRONG>-pr</STRONG></DT>
+<DD>prevalence: probability (%) of occurence of one event
+</DD>
+<DT><STRONG>-level</STRONG></DT>
+<DD>probability of observing the given number of events
+
+<P>
+
+</DD>
+<DT><STRONG><B>Binomial confidence intervals</B></STRONG></DT>
+<DD>
+</DD>
+</DL>
+
+<P>
+The first design options may lead to small samples and the
+approximations used to estimate sample size are known to be non valid
+if less than 5 sampled units are expected to have the studied
+characteristic (equally problemactic: all sampled units minus 5 or
+less have that characteristic). One alternative approach is to
+calculate the binomial exact confidence intervals that result from
+different sets of numbers. Relevant options are:
+<DL>
+<DT><STRONG>-bi</STRONG></DT>
+<DD>two parameters: number of observations, number of successes
+</DD>
+<DT><STRONG>-level</STRONG></DT>
+<DD>of confidence interval, default 95%
+
+<P>
+<BR>
+<BR>
+
+</DD>
+<DT><STRONG><B>Comparison of percentages and means: sample size and power</B></STRONG></DT>
+<DD>
+</DD>
+</DL>
+
+<P>
+<I>S</I>ampsize estimates the required sample size for studies
+comparing two groups. <I>S</I>ampsize can be used when comparing
+means or proportions for simple studies where only one measurement of
+the outcome is planned.  <I>S</I>ampsize computes the sample size for
+two-sample comparison of means, where the postulated values of the
+means and standard deviations are <B>-means m1 m2 sd1 sd2</B>;
+one-sample comparison of mean to hypothesized value (option <B>  -onesample</B> must be specified and only three parameters to the
+option <B>-means</B> are allowed in one-sample tests: m1, m2 and sd1);
+two-sample comparison of proportions (option <B>-cp</B> where the
+postulated values of the proportions are #1 and #2); and one-sample
+comparison of proportion to hypothesized value (option <B>  -onesample</B> should be specified), where the hypothesized proportion
+(null hypothesis) is #1 and the postulated proportion (alternative
+hypothesis) is #2. Default power is 90%. If <B>-n</B> is
+specified, <I>s</I>ampsize will compute power.
+
+<P>
+In the case of a cluster sampling design, a sample of natural groups
+of individuals is selected, rather than a random sample of the
+individuals themselves. Observations are no longer independant as we
+would expect had they been drawn randomly from the population.
+Nonindependance is measured by the intraclass correlation, which is
+specified with option <B>-rho</B> (between 0 and 1).  One may then
+specify <B>-numclus</B>, the number of clusters (for instance, the
+number of physicians who will recruit the patients: typically, the
+intraclass orrelation will be fairly small, often between 0 and 0.05),
+or alternatively, <B>-obsclus</B>, the minimum number of
+observations per cluster. The larger the number of clusters and the
+fewer observations per cluster, the less the effect on the standard
+error estimates. A sample of 250 consisting of 50 clusters with 5
+observations per cluster will have better power than the same sample
+size consisting of 25 clusters with 10 observations per cluster. In
+fact, with only one observation per cluster, we are back to a simple
+random sample. If there is no intraclass correlation, there will be no
+increase in the sample size estimate.
+
+<P>
+By default, no continuity correction is applied when computing sample
+size or power for the comparison of two percentages. However, the
+correction may be applied with option <B>-cc </B>.  The correction
+will result in a greater sample size and smaller power. Simulations
+showed that the correction is most often too conservative (Alzola C
+and Harrell F, An introduction to S and the Hmisc and Design
+Libraries: <TT><A NAME="tex2html2"
+  HREF="http://hesweb1.med.virginia.edu/biostat/s/splus.html">http://hesweb1.med.virginia.edu/biostat/s/splus.html</A></TT>).
+
+<P>
+Relevant options are (either <B>-cp</B> or <B>-means</B> must be
+specified, not both):
+<DL>
+<DT><STRONG>-cp</STRONG></DT>
+<DD>percentages (%), two parameters for two proportions to compare
+</DD>
+<DT><STRONG>-means</STRONG></DT>
+<DD>two means and two standard deviations (one if one-sample): m1 m2 sd1 [sd2]
+</DD>
+<DT><STRONG>-alpha</STRONG></DT>
+<DD>alpha risk (%), default 5%
+</DD>
+<DT><STRONG>-n</STRONG></DT>
+<DD>sample size of the first group (total sample size in one-sample comparison)
+</DD>
+<DT><STRONG>-power</STRONG></DT>
+<DD>power of the comparison (%), default 90%
+</DD>
+<DT><STRONG>-onesided</STRONG></DT>
+<DD>one-sided test
+</DD>
+<DT><STRONG>-onesample</STRONG></DT>
+<DD>one-sample comparison against hypothesized value
+</DD>
+<DT><STRONG>-rho</STRONG></DT>
+<DD>intraclass correlation (between 0 and 1)
+</DD>
+<DT><STRONG>-obsclus</STRONG></DT>
+<DD>number of observations per cluster
+</DD>
+<DT><STRONG>-numclus</STRONG></DT>
+<DD>minimum number of cluster
+</DD>
+<DT><STRONG>-cc</STRONG></DT>
+<DD>continuity correction
+
+<P>
+<BR>
+<BR> 
+
+</DD>
+<DT><STRONG><B>Case-control studies</B></STRONG></DT>
+<DD>
+</DD>
+</DL>
+
+<P>
+To specify a case-control design, we need to type the option <B>  -exp</B>, which specifies the percentage of exposed controls. If we add
+the option <B>-or</B>, the odds-ratio that that we wish to detect,
+<I>s</I>ampsize will return the sample size for an unmatched design
+(option <B>-c</B> specifies the ratio of controls/cases, the default
+ratio is 1). The option <B>-matched</B> may be used to specify a 1:1
+matched study design (<B>-c</B> may not be used with <B>-matched</B>).
+If we specify <B>-exp</B>, <B>-or</B>, and <B>-n</B>, <B>  sampsize</B> will return the power of the specified design. If one
+specifies <B>-exp</B> and <B>-n</B>, which is the number of cases,
+<I>s</I>ampsize will return the minimum detectable odds-ratio greater
+than one and the maximum detectable odds-ratio lower than one, an
+alternative to the power determination. Relevant options are:
+<DL>
+<DT><STRONG>-exp</STRONG></DT>
+<DD>percentage exposed among controls
+</DD>
+<DT><STRONG>-n</STRONG></DT>
+<DD>number of cases, or number of pairs if 1:1 matched case-control study
+</DD>
+<DT><STRONG>-or</STRONG></DT>
+<DD>odds-ratio to detect
+</DD>
+<DT><STRONG>-c</STRONG></DT>
+<DD>ratio of controls/cases (truncated to integer), default 1, not used if matched
+</DD>
+<DT><STRONG>-alpha</STRONG></DT>
+<DD>alpha risk (%), default 5%
+</DD>
+<DT><STRONG>-power</STRONG></DT>
+<DD>power of the comparison (%), default 90%
+</DD>
+<DT><STRONG>-onesided</STRONG></DT>
+<DD>one-sided test
+</DD>
+<DT><STRONG>-matched</STRONG></DT>
+<DD>1:1 matched case-control study
+
+<P>
+<BR>
+<BR> 
+
+</DD>
+<DT><STRONG><B>Equivalence trials: sample size</B></STRONG></DT>
+<DD>
+</DD>
+</DL>
+
+<P>
+The goal of an equivalence trial is to prove that two quantities are
+equal. The hypothesis framework for an equivalence trial requires the
+specification of no difference in the alternative and a difference in
+the null. It contains an additional parameter delta, <B>-d</B>, to
+indicate the maximum clinical difference allowed for an experimental
+therapy to be considered equivalent with a standard therapy. Binomial
+endpoints are defined as the positive difference of the probability of
+success for the standard <I>group (ps)</I> and the probability of
+success for the experimental <I>group (pt)</I> of patients. These
+probabities are entered with <B>-cp #ps #pt</B> (percentages), and
+delta is entered as a percentage. In the case of a continuous
+endpoint, delta indicates the maximum clinical difference allowed for
+the comparison of two means, and is entered using the <B>-d</B> option.
+Means and standard deviations are to be entered the usual way with
+<B>-means ms me ss se</B>, with ms and me the means in the standard and
+experimental group, respectively, and ss and se the standard
+deviations.
+
+<P>
+There is a general misconception that it requires a larger sample to
+prove equivalence than difference. The veracity of this assumption is
+situation-specific and dependant upon the degree of difference, delta,
+one is willing to allow so that the standard and experimental
+treatments may still be considered equivalent. Relevant options are:
+
+<P>
+<DL>
+<DT><STRONG>-cp</STRONG></DT>
+<DD>percentages
+(%), two parameters for two proportions to compare
+</DD>
+<DT><STRONG>-means</STRONG></DT>
+<DD>two means and two
+standard deviations (one if one-sample): m1 m2 sd1 [sd2]
+</DD>
+<DT><STRONG>-alpha</STRONG></DT>
+<DD>alpha risk
+(%), default 5%
+</DD>
+</DL>
+
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<H2><A NAME="SECTION00026000000000000000">
+EXAMPLES</A>
+</H2>
+
+<H2><A NAME="SECTION00027000000000000000">
+Prevalence surveys</A>
+</H2>
+
+<P>
+<DL>
+<DT><STRONG>*</STRONG></DT>
+<DD>To calculate the sample size given a 50% prevalence
+  (default) and infinite population size (also default), with 5%
+  precision: the upper boundary of the confidence interval will equal
+  the observed prevalence plus 5%, and the lower boundary will equal
+  the observed prevalence minus 5%, i.e. [45% - 55%]:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -e 5 
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Precision          = 5.00  %
+     Prevalence         = 50.00 %
+     Population size    = infinite
+
+        95% Confidence Interval specified limits [  45%   --   55% ]
+        (these limits equal prevalence plus or minus precision)
+
+Estimated sample size:
+                      n =      385
+
+        95% Binomial Exact Confidence Interval with n =      385
+        and n * prevalence =    193 observed events:
+        [45.0212%   -- 55.2365% ]
+</PRE>
+
+<P>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>To get the needed sample size after correction for population
+  size (n = 1500):
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -e 5 -pop 1500 
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Precision          = 5.00  %
+     Prevalence         = 50.00 %
+     Population size    = 1500
+
+        95% Confidence Interval specified limits [  45%   --   55% ]
+        (these limits equal prevalence plus or minus precision)
+
+Estimated sample size:
+                      n =      306
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>Assuming a prevalence of 10%, a precision of 4% estimated
+  using a 90% confidence interval, and a target population size of
+  2500:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -pr 10 -e 4 -pop 2500 -level 90
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Precision          = 4.00  %
+     Prevalence         = 10.00 %
+     Population size    = 2500
+
+        90% Confidence Interval specified limits [   6%   --   14% ]
+        (these limits equal prevalence plus or minus precision)
+
+Estimated sample size:
+                      n =      144
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>Assuming that the observed prevalence in the sample will be
+  null, for a 97.5% one-sided confidence interval upper limit that is
+  equal to the entered precision (2% in this example), type:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -pr 0 -e 2
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Precision          = 2.00  %
+     Prevalence         = 0.00 %
+     Population size    = infinite
+
+A null prevalence was entered, we assume here that the observed 
+prevalence in the sample will be null, and compute the sample
+size for an upper limit of the confidence interval equal to the
+entered precision. The population size is not taken into account
+even if a finite size was entered. Sample sizes are calculated
+using the binomial exact method.
+
+      97.5% one-sided Confidence Interval upper limit = 2.00
+
+Estimated sample size:
+                      n =        183
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>Assuming that the observed prevalence in the sample will be
+  null, for 95% one-sided confidence interval upper limit equal to
+  the entered precision (2% in this example), type:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -pr 0 -e 2 -level 90
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Precision          = 2.00  %
+     Prevalence         = 0.00 %
+     Population size    = infinite
+
+A null prevalence was entered, we assume here that the observed 
+prevalence in the sample will be null, and compute the sample
+size for an upper limit of the confidence interval equal to the
+entered precision. The population size is not taken into account
+even if a finite size was entered. Sample sizes are calculated
+using the binomial exact method.
+
+        95% one-sided Confidence Interval upper limit = 2.00
+
+Estimated sample size:
+                      n =        149
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>A study on the hepatitis C virus aims at describing some
+  characteristics of the virus strains. It is assumed that the
+  prevalence of virus positive individuals is 10% in the population.
+  The investigators wish to calculate the sample size needed to be
+  95% sure that at least 5 patients will harbour a virus.
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -nob 5 -pr 10
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+   prevalence                  =       10%
+   minimum number of successes =       5  in the sample
+   with probability            =       95%
+
+Estimated sample size:
+                             n =       90
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>You flip a coin 10 times and it comes up heads only once. You
+  are shocked and decide to obtain a 99% confidence interval for this
+  coin:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -bi 10 1
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+   number of observations = 10
+   number of successes    = 1
+
+Binomial Exact   95% Confidence Interval: 
+   [0.252858% -- 44.5016%]
+</PRE>
+
+<P>
+</DD>
+</DL>
+&nbsp;
+
+<H2><A NAME="SECTION00028000000000000000">
+Comparative studies of proportions</A>
+</H2>
+
+<P>
+<DL>
+<DT><STRONG>*</STRONG></DT>
+<DD>Someone claims that US females are more likely than US males to
+study French. Our null hypothesis is that the proportion of female French
+students is 0.5. We wish to compute the sample size that will give us a 80%
+power to reject the null hypothesis if the true proportion of female French
+students is 75%.
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -cp 50 75 -power 80 -onesample
+<BR></DD>
+</DL><PRE>
+Estimated sample size for one-sample comparison of percentage to
+hypothesized value
+
+Test Ho:     p =         50%, where p is the percentage in the population
+
+Assumptions:
+         alpha =          5% (two-sided)
+         power =         80%
+ alternative p =         75%
+
+Estimated sample size:
+             n =         29
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>We want to conduct a survey on people<code>'</code>s opinions of
+  the President<code>'</code>s performance. Specifically, we want to
+  determine whether members of the President<code>'</code>s party have a
+  different opinion from people with another party affiliation. We
+  estimate that only 25% of members of the President<code>'</code>s party
+  will say that the President is doing a poor job, whereas 40% of
+  other parties will rate the President<code>'</code>s performance as poor.
+  We compute the sample size for alpha = 5% (two-sided) and power =
+  90%:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -cp 25 40
+<BR></DD>
+</DL><PRE>
+Estimated sample size for two-sample comparison of percentages
+
+Test H:    p1 = p2, where p1 is the percentage in population 1
+and p2 is the percentage in population 2
+
+Assumptions:
+        alpha =          5% (two-sided)
+        power =         90%
+           p1 =         25%
+           p2 =         40%
+
+Estimated sample size:
+           n1 =        216
+           n2 =        216
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>Following the calculation for the survey on the
+  President<code>'</code>s performance, we realize that we can sample only
+  n1 = 300 members of the President<code>'</code>s party and a sample of n2
+  = 150 members of other parties, due to time constraints. We wish to
+  compute the power of our survey:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -n 300 -cp 25 40 -c 0.5
+<BR></DD>
+</DL><PRE>
+Estimated power for two-sample comparison of percentages
+
+Test Ho:    p1 = p2, where p1 is the percentage in the population 1
+and p2 is the percentage in the population 2
+
+Assumptions:
+
+         alpha =          5 (two-sided)
+            p1 =         25%
+            p2 =         40%
+sample size n1 =        300
+sample size n2 =        150
+         n2/n1 =        0.5
+
+Estimated power:
+
+        power =    87.8976%
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>We wish to study the proportion of patients who have not
+  recovered from a back pain by 4 weeks, and compare the outcome
+  between patients in whom sciatica was diagnosed and patients without
+  sciatica. We know that typically, about 20% of acute low back pain
+  patients have not recovered by 4 weeks and think that the percentage
+  may be 30% for patients who also have sciatica. The sample size we
+  would need to detect this difference between the two groups, with a
+  two-sided alpha of 5% and a power or 80% is 313:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -cp 20 30 -power 80
+<BR></DD>
+</DL><PRE>
+Estimated sample size for two-sample comparison of percentages
+
+Test H:    p1 = p2, where p1 is the percentage in population 1
+and p2 is the percentage in population 2
+
+Assumptions:
+        alpha =          5% (two-sided)
+        power =         80%
+           p1 =         20%
+           p2 =         30%
+
+Estimated sample size:
+           n1 =        313
+           n2 =        313
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>Now we look at the same example using 10 observations per
+  cluster and an intraclass correlation of 0.1:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -cp 20 30 -power 80 -obsclus 10 -rho 0.1
+<BR></DD>
+</DL><PRE>
+Estimated sample size for two-sample comparison of percentages
+
+Test H:    p1 = p2, where p1 is the percentage in population 1
+and p2 is the percentage in population 2
+
+Assumptions:
+        alpha =          5% (two-sided)
+        power =         80%
+           p1 =         20%
+           p2 =         30%
+
+Estimated sample size:
+           n1 =        313
+           n2 =        313
+
+
+Sample size adjusted for cluster design:
+
+  Intraclass correlation     =        0.1
+  Average obs. per cluster   =         10
+  Minimum number of clusters =        119
+
+Estimated sample size per group:
+
+           n1 (corrected)    =        595
+           n2 (corrected)    =        595
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>Taking into account the cluster design of the study, our
+  samples have increased to 595 per group and a total of 119
+  physicians (clusters). Finally, we try the calculation assuming only
+  40 physicians:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -cp 20 30 -power 80 -numclus 40 -rho 0.1
+<BR></DD>
+</DL><PRE>
+Sample size adjusted for cluster design:
+
+Error: for rho =        0.1, the minimum number of clusters possible is:
+       numclus =         63
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>We got an error message telling us that, given these sets of
+  sample size parameters, it is not possible to estimate a sample size
+  with fewer than 63 clusters. We need to rerun <I>s</I>ampsize with
+  different parameters in order to get a manageable number of
+  patients.
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -cp 20 30 -power 80 -numclus 40 -rho 0.05
+<BR></DD>
+</DL><PRE>
+Sample size adjusted for cluster design:
+
+  Intraclass correlation     =       0.05
+  Average obs. per cluster   =         69
+  Minimum number of clusters =         40
+
+Estimated sample size per group:
+
+           n1 (corrected)    =       1378
+           n2 (corrected)    =       1378
+</PRE>
+
+<P>
+</DD>
+</DL>
+&nbsp;
+
+<H2><A NAME="SECTION00029000000000000000">
+Comparative studies of means</A>
+</H2>
+
+<P>
+<DL>
+<DT><STRONG>*</STRONG></DT>
+<DD>We wish to test the effects of a low-fat diet on serum
+  cholesterol levels. We will measure the difference in cholesterol
+  level for each subject before and after being on the diet. Since
+  there is only one group of subjects, all on diet, this is a
+  one-sample test. Our null hypothesis is that the mean of individual
+  differences in cholesterol level will be zero; i.e., mdiff =
+  0mg/100ml. If the effect of the diet is as large as a mean
+  difference of -10mg/100ml, then we wish to have power of 95% for
+  rejecting the null hypothesis. Since we expect a reduction in
+  levels, we want to use a one-sided test with alpha = 2.5%. Based on
+  past studies, we estimate that the standard deviation of the
+  difference in cholesterol levels will be about 20mg/100ml:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -means 0 -10 20 -onesample -alpha 2.5 -onesided -power 95
+<BR></DD>
+</DL><PRE>
+Estimated sample size for one-sample comparison of mean to
+hypothesized value
+
+Test Ho:    m =          0, where m is the mean in the population
+
+Assumptions:
+        alpha =        2.5 (one-sided)
+        power =         95
+alternative m =        -10
+           sd =         20
+
+Estimated sample size:
+            n =         52
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>We decide to conduct the cholesterol study with n = 60
+  subjects, an we wonder what the power will be at a one-sided
+  significance level of alpha = 1%:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -n 60 -means 0 -10 20 -onesample -onesided -alpha 1 
+<BR></DD>
+</DL><PRE>
+Estimated power for one-sample comparison of mean
+to hypothesized value
+
+Test Ho:    m =          0%, where m is the mean in the population
+
+Assumptions:
+
+        alpha =          1% (one-sided)
+alternative m =        -10
+           sd =         20
+  sample size =         60
+
+
+Estimated power:
+
+        power =    93.9024%
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>We are doing a study of the relationship of oral
+  contraceptives (OC) and blood pressure (BP) level for women ages
+  35-39. From a pilot study, it was determined that the mean and
+  standard deviation BP of OC users were 132.86 and 15.34,
+  respectively. The mean and standard deviation BP of OC users were
+  127.44 and 18.23. Since it is easier to find OC nonusers than users
+  in the country were the study is conducted, we decide that n2, the
+  size of the sample of OC users, should be twice n1, the size of the
+  sample of OC users; that is, c = n2/n1 = 2.  To compute the sample
+  sizes for alpha = 5% (two-sided) and the power of 80%:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -means 132.86 127.44 15.34 18.23 -power 80 -c 2
+<BR></DD>
+</DL><PRE>
+Estimated sample size for two-sample comparison of means
+
+Test Ho:   m1 = m2, where m1 is the mean in population 1
+and m2 is the mean in population 2
+
+Assumptions: 
+
+        alpha =          5 (two-sided)
+        power =         80
+           m1 =     132.86
+           m2 =     127.44
+          sd1 =      15.34
+          sd2 =      18.23
+        n2/n1 =          2
+
+Estimated sample size:
+
+           n1 =        108
+           n2 =        216
+</PRE>
+
+<P>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>We now find that we only have enough money to study 100
+  subjects from each group for the above oral contraceptives study. We
+  can compute the power for n1 = n2 = 100
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -n 100 -means 132.86 127.44 15.34 18.23
+<BR></DD>
+</DL><PRE>
+                                          
+Estimated power for two-sample comparison of means
+
+Test Ho:    m1 = m2, where m1 is the mean in the population 1
+and m2 is the mean in the population 2
+
+Assumptions:
+
+         alpha =          5% (two-sided)
+            m1 =     132.86
+            m2 =     127.44
+           sd1 =      15.34
+           sd2 =      18.23
+sample size n1 =        100
+sample size n2 =        100
+         n2/n1 =          1
+
+Estimated power:
+
+         power =    62.3601%
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>Patients for the study on oral contraceptives and blood
+  pressure will be recruited in 12 clinics, and we suspect some
+  intraclass correlation (patients recruited in the same clinic are
+  more alike than patients recruited from different clinics). Due to
+  the cluster sampling design, patients are not independant
+  observations, and we wish to correct the above sample size (sampsize
+  returned a sample size of 108 in the first group, and 216 in the
+  second group). We think that the intraclass correlation is fairly
+  small (0.02), and compute:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -means 132.86 127.44 15.34 18.23 -power 80 -c 2  
+-numclus 12 -rho 0.02
+</DD>
+</DL><PRE>
+Estimated sample size for two-sample comparison of means
+
+Test Ho:   m1 = m2, where m1 is the mean in population 1
+and m2 is the mean in population 2
+
+Assumptions: 
+
+        alpha =          5 (two-sided)
+        power =         80
+           m1 =     132.86
+           m2 =     127.44
+          sd1 =      15.34
+          sd2 =      18.23
+        n2/n1 =          2
+
+Estimated sample size:
+
+           n1 =        108
+           n2 =        216
+
+
+Sample size adjusted for cluster design:
+
+  Intraclass correlation     =       0.02
+  Average obs. per cluster   =         58
+  Minimum number of clusters =         12
+
+Estimated sample size per group:
+
+           n1 (corrected)    =        232
+           n2 (corrected)    =        464
+</PRE>
+
+<P>
+The design effect is rather important despite a small intraclass
+correlation, due to the small number of clusters. Sampsize returned n1
+= 232 and n2 = 464, more than twice the initial sample size.
+
+<P>
+</DD>
+</DL>
+&nbsp;
+
+<H2><A NAME="SECTION000210000000000000000">
+Case-Control Studies</A>
+</H2>
+
+<P>
+<DL>
+<DT><STRONG>*</STRONG></DT>
+<DD>We wish to conduct a case control study to assess whether
+  bladder cancer is associated with past exposure to cigarette
+  smoking. Cases will be patients with bladder cancer and controls
+  will be patients hospitalized for injury. It is assumed that 20% of
+  controls will be smokers or past smokers, and we wish to detect an
+  odds-ratio of 2 with power 90%. Three controls will be recruited
+  for one case:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -or 2 -exp 20 -c 3
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Odds ratio             =          2
+     Exposed controls       =         20%
+     Alpha risk             =          5%
+     Power                  =         90%
+     Controls / Case ratio  =          3
+
+     Total exposed          =    23.3333%
+
+Estimated sample size:
+
+     Number of cases        =        150
+     Number of controls     =        450
+
+     Total                  =        600
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>The above study on bladder cancer needed a total sample size
+  of 600. An alternative is to conduct a matched case-control study of
+  bladder cancer and cigarette smoking rather than the above unmatched
+  study design. One case will be matched to one control. Again, the
+  percentage of exposed controls is 20%, and we wish to detect a
+  two-fold increased risk (OR = 2). With these specifications, we need
+  226 pairs (total sample size 452).
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -or 2 -exp 20 -matched
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Odds ratio             =          2
+     Exposed controls       =         20%
+     Alpha risk             =          5%
+     Power                  =         90%
+     Probability of an
+  exposure-discordant pair  =         40%
+
+Estimated sample size (number of pairs):
+
+     Number of exposure discordant-pairs  =         91
+     Number of pairs                      =        226
+     Total sample size                    =        452
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>The following table (Kline et al., 1978) shows previous
+  induced abortions among multigravid cases and controls.
+  (Primiigravidae were excluded since these women did not have prior
+  pregnancies.):
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">Spontaneous</TD>
+<TD ALIGN="CENTER">Controls</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">abortions</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">PIA:</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSPAN=1>yes</TD>
+<TD ALIGN="CENTER">171</TD>
+<TD ALIGN="CENTER">90</TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSPAN=1>no</TD>
+<TD ALIGN="CENTER">303</TD>
+<TD ALIGN="CENTER">165</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Total:</TD>
+<TD ALIGN="CENTER">474</TD>
+<TD ALIGN="CENTER">255</TD>
+</TR>
+</TABLE>
+
+<P>
+The power of the study for detecting a relative risk of R = 1.5 is
+calculated as follows: <!-- MATH
+ $c = 255/474 = 0.538$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$c = 255/474 = 0.538$">, percentage exposed in
+controls = <!-- MATH
+ $100\times90/255 = 35.29$
+ -->
+<IMG
+ WIDTH="153" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$100\times90/255 = 35.29$">:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -or 1.5 -exp 35.29 -c 0.538 -n 474
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Odds ratio             =        1.5
+     Exposed controls       =      35.29%
+     Alpha risk             =          5%
+     Controls / Case ratio  =      0.538
+
+     Total exposed          =    41.6005%
+
+     Number of cases        =        474
+     Number of controls     =        255
+
+     Total                  =        729
+
+Estimated power:
+
+                      power =    72.0774%
+</PRE>
+</DD>
+<DT><STRONG>*</STRONG></DT>
+<DD>Kessler and Clark (1978) studied 365 males with bladder
+  cancer and an equal number of controls, 35 percent of whom reported
+  past use of nonnutritive sweeteners. Using a one-sided test at the
+  alpha = 5% level, the smallest relative risk greater than one that
+  can be detected with 90% power is RR = 1.55:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -n 365 -exp 35 -onesided
+<BR></DD>
+</DL><PRE>
+Assumptions:
+
+     Exposed controls       =         35%
+     One-sided alpha risk   =          5%
+     Power                  =         90
+     Number of cases        =        365
+     Number of controls     =        365
+
+     Total                  =        730
+
+Estimated smallest and highest detectable odds-ratio:
+
+   Highest  odds-ratio &lt; 1  =   0.623181
+   Smallest odds-ratio &gt; 1  =    1.55439
+</PRE>
+</DD>
+</DL>
+
+<P>
+
+<H2><A NAME="SECTION000211000000000000000">
+Equivalence trials</A>
+</H2>
+<DL>
+<DT><STRONG>*</STRONG></DT>
+<DD>Researchers want to show that a new treatment is "as good as"
+  the standard one. The success rates of both treatments are expected
+  to be approximately 90%. The researchers want to be sure that the
+  new treatment is no worse than the standard treatment by an amount
+  of 10%. Then, the sample size for each treatment group is 155
+  patients:
+
+<P>
+
+<DL COMPACT>
+<DT>
+<DD>cunegonde:~&gt;sampsize -cp 90 90 -d 10 
+<BR></DD>
+</DL>
+</DD>
+</DL>
+<PRE>
+Estimated sample size for two-sample non-inferiority comparison of percentages
+
+Test H0:    p2 &lt; p1 - delta, where p1 is the percentage in population 1,
+p2 is the percentage in population 2, and delta is the critical value
+
+Assumptions:
+        alpha =          5% (two-sided)
+        power =         90%
+           p1 =         90%
+           p2 =         90%
+        delta =         10%
+
+Estimated sample size per group:
+           n =        155
+</PRE>
+
+<P>
+
+<H2><A NAME="SECTION000212000000000000000">
+PRIMARY FTP SITE</A>
+</H2>
+
+<P>
+The most recent distributions of <B>sampsize</B> can be found at:
+
+<P>
+<DL>
+<DT></DT>
+<DD><TT><A NAME="tex2html3"
+  HREF="http://prdownloads.sourceforge.net/sampsize/">http://prdownloads.sourceforge.net/sampsize/</A></TT>
+</DD>
+</DL>
+
+<P>
+<I>s</I>ampsize project home page:
+<DL>
+<DT></DT>
+<DD><TT><A NAME="tex2html4"
+  HREF="http://sampsize.sourceforge.net/">http://sampsize.sourceforge.net/</A></TT>
+</DD>
+</DL>
+
+<P>
+
+<H2><A NAME="SECTION000213000000000000000">
+NOTES</A>
+</H2>
+
+<P>
+Some parts of <I>s</I>ampsize are translated and adapted from
+publicly available code written in the stata language (Statacorp
+Inc.).
+
+<P>
+
+<H2><A NAME="SECTION000214000000000000000">
+REFERENCES</A>
+</H2>
+
+<OL>
+<LI>Cephes mathematical library. Release 2.8: June 2000.
+  http://www.moshier.net/cephes-math-28.tar.gz, accessed and
+  downloaded May 2002.
+</LI>
+<LI>Garrett JM. Sample size estimation for cluster designed samples.
+  STB Reprints 2002: 10; 387-393.
+</LI>
+<LI>Levy PS, Lemeshow S. Sampling of populations. Methods and
+  Applications. Wiley Series in Probability and Statistics, John Wiley
+  and Sons, Inc. 1999.
+</LI>
+<LI>Pagano P., Gauvreau K. Principles of biostatistics. 2d ed.
+  Pacific Grove, CA: Brooks/Cole 2000.
+</LI>
+<LI>Rosner B. Fundamentals of Biostatistics. 5th ed. Pacific Grove,
+  CA: Duxbury Press.
+</LI>
+<LI>Schlesselman JJ. Case-Control Studies. Design, Conduct,
+  Analysis. Oxford Univ.  Press 1982.
+</LI>
+<LI>Blackwelder WC. "Proving the null hypothesis" in clinical
+  trials. C ontrolled Clinical Trials 1982; 3: 345-353.
+ 
+</LI>
+</OL>
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+About this document ...</A>
+</H1>
+ <STRONG>
+<BR>
+<BR> 
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>&nbsp;</TD>
+<TD ALIGN="RIGHT"><FONT SIZE="+4"><B>Sampsize</B></FONT></TD>
+</TR>
+</TABLE>
+<BR>
+<BR> 
+ 
+<BR> 
+<BR><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>&nbsp;</TD>
+<TD ALIGN="RIGHT"><FONT SIZE="+1"><B>Sample size and Power</B></FONT></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>&nbsp;</TD>
+<TD ALIGN="RIGHT"><FONT SIZE="+1"><B>Version 0.6</B></FONT></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>&nbsp;</TD>
+<TD ALIGN="RIGHT"><FONT SIZE="+1">September 29, 2003</FONT></TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</STRONG><P>
+This document was generated using the
+<A HREF="http://www-texdev.mpce.mq.edu.au/l2h/docs/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 2K.1beta (1.48)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996,
+<A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, 
+Computer Based Learning Unit, University of Leeds.
+<BR>
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT>-split 1 manual</TT>
+<P>
+The translation was initiated by Philippe Glaziou on 2003-09-29<HR>
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="/usr/share/latex2html/icons/nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png">   
+<BR>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Philippe Glaziou
+2003-09-29
+</ADDRESS>
+</BODY>
+</HTML>

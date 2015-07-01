@@ -1,0 +1,222 @@
+<HTML><HEAD><TITLE>Sampsize</TITLE></HEAD>
+  
+  <BODY>
+    <FONT face="Verdana">	
+      <H2>Sampsize</H2>
+      Sample size for: <A name="index">&nbsp</A>
+      <UL>
+	<LI><A href="index.html#prev">Prevalence survey</A></LI>
+	<LI><A href="index.html#min">Low probability events</A></LI>
+	<LI><A href="#comp">Comparative study of percentages</A></LI>
+	<LI><A href="#np">Power determination: percentages</A></LI>
+	<LI><A href="s2.html#means">Comparative study of means</A></LI>
+	<LI><A href="s2.html#nm">Power determination: means</A></LI>
+	<LI><A href="s3.html#cc">Case-control study</A></LI>
+	<LI><A href="s3.html#ccp">Power of a case-control study</A></LI>
+      </UL>
+      
+      <HR>
+      
+      <A name="comp">&nbsp</A>
+      <TABLE width=90%>
+	<TR>
+	  <TD><B>Sample size for a study comparing percentages</B></TD>
+	</TR>
+      </TABLE>
+      <BR>
+      <FORM action="../../cgi-bin/s1.cgi" method="POST">
+	<TABLE cellspacing=2 cellpadding=0 bgcolor="#EFF3F7" width="500">
+	  <TR>
+	    <TD align=right> &nbsp&nbsp</TD>      
+	    <TD></TD>
+	    <TD width=30></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Proportion 1&nbsp&nbsp </TD> 
+	    <TD><INPUT type="text" size=15 maxlength=10 name="p1"></TD>
+	    <TD>%</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Proportion 2&nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="p2"></TD>
+	    <TD>%</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Power&nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="power" value="90"></TD>
+	    <TD>% (default 90%)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Ratio n2/n1&nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="c" value="1"></TD>
+	    <TD>&nbsp&nbsp&nbsp(default 1)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Alpha risk&nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="alpha" value="5"></TD>
+	    <TD>% (default 5%)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>One-sided test&nbsp&nbsp </TD>
+	    <TD><INPUT type="checkbox" name="onesided"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>One-sample test&nbsp&nbsp </TD>
+	    <TD><INPUT type="checkbox" name="onesample"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR><TD colspan=3>&nbsp</TD></TR>
+	  <TR>
+	    <TD colspan=3 align=center><B>Cluster sampling design: <INPUT type="checkbox" name="cluster"</B></TD>
+	  </TR>
+	  <TR>
+	    <TD>Intraclass correlation&nbsp&nbsp</TD>
+	    <TD><INPUT type="text" size=15 maxlength=8 name="rho"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD colspan=2>
+	    Number of clusters <INPUT type="text" size=6 maxlength=6 name="numclus"> or, (not both) </TD>
+	    <TD><INPUT type="text" size=6 maxlength=6 name="obsclus"> Number of observations</TD>
+	  </TR>
+	  <TR>
+	    <TD colspan=3>&nbsp</TD>
+	  </TR>
+	</TABLE>
+	
+	<INPUT type="submit" value="Calculate">
+	<INPUT type="reset" value="Clear">
+      </FORM>
+      <BR><BR>
+      <TABLE width="600">
+	<TR><TD><B>Example 1:</B> Someone claims that US females are more
+	    likely than US males to study French. Our null hypothesis
+	    is that the proportion of female French students is 0.5. We wish
+	    to compute the sample size that will give us a 80% power to
+	    reject the null hypothesis if the true proportion of female
+	    French students is 75%.
+	    The values 50 and 75 should be entered in the fields
+	    "Proportion 1" and "Proportion 2", respectively, 80 in the field
+	    "Power", the ratio and alpha risk may be left to their default
+	    values. The check box "One-sided test" should be left unchecked, but
+	    the check box "One-sample test" should be checked because the
+	    null hypothesis is that the percentage of females is 50% in
+	    the population. Sampsize returns a sample size of n = 29.
+	    <br><a name="clust">&nbsp</a><br><b>Cluster sampling: </b>
+	    The sampled population will be drawn from 8 universities. We know that
+	    students within a given university are more alike than students from 
+	    different universities. We suspect that the intraclass correlation is
+	    fairly high (0.1), and wish to correct the above sample size to take 
+	    into account the sampling design. We check the "Cluster sampling design"
+	    check box, enter 0.1 in the "intraclass correlation" field and 8 in the
+	    "number of clusters" field. Sampsize returns a corrected sample size of
+	    n = 96, with an average of 24 students sampled in each university.
+	    <A name="president">&nbsp</A>
+	    <BR><BR>
+	    <B>Example 2:</B> We want to conduct a survey on people's opinions of
+	    the President's performance. Specifically, we want to determine
+	    whether members of the President's party have a different
+	    opinion from people with another party affiliation. We estimate
+	    that only 25% of members of the President's party will say that
+	    the President is doing a poor job, whereas 40% of other parties
+	    will rate the President's performance as poor. We compute the
+	    sample size for alpha = 5% (two-sided) and power = 90% by
+	    entering the values 25 and 40 as "Proportion 1" and "Proportion
+	    2", respectively, 90 for "Power", "Ratio" and "Alpha" risk are
+	    left at their default values (1 and 5). We leave both check
+	    boxes unchecked. Sampsize returns an estimated sample size of
+	    216 for each groups.
+      </TD></TR></TABLE>
+      
+      
+      <HR>
+      <A name="np">&nbsp</A>
+      <TABLE width=90%>
+	<TR>
+	  <TD><B>Power determination: percentages</B></TD>
+	</TR>
+      </TABLE>
+      <BR>
+      <FORM action="../../cgi-bin/s1.cgi" method="POST">
+	<TABLE cellspacing=2 cellpadding=0 bgcolor="#EFF3F7" width="500">
+	  <TR>
+	    <TD align=right> &nbsp&nbsp</TD>      
+	    <TD></TD>
+	    <TD width=30></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Proportion 1&nbsp&nbsp </TD> 
+	    <TD><INPUT type="text" size=15 maxlength=10 name="p1"></TD>
+	    <TD>%</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Proportion 2&nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="p2"></TD>
+	    <TD>%</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>sample size n1&nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="n"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Ratio n2/n1&nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="c" value="1"></TD>
+	    <TD>&nbsp&nbsp&nbsp(default 1)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>Alpha risk&nbsp&nbsp </TD>
+	    <TD><INPUT type="text" size=15 maxlength=10 name="alpha" value="5"></TD>
+	    <TD>% (default 5%)</TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>One-sided test&nbsp&nbsp </TD>
+	    <TD><INPUT type="checkbox" name="onesided"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD align=right>One-sample test&nbsp&nbsp </TD>
+	    <TD><INPUT type="checkbox" name="onesample"></TD>
+	    <TD></TD>
+	  </TR>
+	  <TR>
+	    <TD colspan=3>&nbsp</TD>
+	  </TR>
+	</TABLE>
+	
+	<INPUT type="submit" value="Calculate">
+	<INPUT type="reset" value="Clear">
+      </FORM>
+      <BR><BR>
+      <TABLE width="600"><TR><TD><B>Example:</B> Following the
+	    calculation for the <A href="#president">survey on the
+	    President's performance</A>, we realize that we can sample only
+	    n1 = 300 members of the President's party and a sample of n2 =
+	    150 members of other parties, due to time constraints. We wish
+	    to compute the power of our survey, and type 25 in the
+	    "Proportion 1" field, 40 in the "Proportion 2" field, 300 in the
+	    "Sample size n1" field, 0.5 in the "Ratio n2/n1" field and leave
+	    the other fields with their default values. Sampsize returns an
+	    estimated power of 87.9%.
+      </TD></TR></TABLE>
+      
+      
+      
+      <HR>
+      <A href="index.html#index">Goto index</A>
+    </FONT>
+    <HR>
+    &copy 2003-2005 Philippe Glaziou<BR>
+    <CODE>glaziou@gmail.com</CODE><BR>
+    <I>Sampsize</I> project <A href="http://sampsize.sourceforge.net">Homepage.</A>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1599321-3";
+urchinTracker();
+</script>
+  </BODY>
+</HTML>
